@@ -1,0 +1,7 @@
+---
+- name: Ping websites
+  hosts: all
+  tasks:
+    - name: ping google.com
+      ansible.builtin.ping:
+        data: "www.google.com"
