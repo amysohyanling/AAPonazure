@@ -5,3 +5,7 @@
     - name: ping google.com
       ansible.builtin.ping:
         data: "www.google.com"
+
+    - name: ping redhat.com
+      ansible.builtin.ping:
+        data: "www.redhat.com"
