@@ -11,5 +11,5 @@
       register: update_result
 
     - name: Reboot the server if required
-      ansible.windows.reboot:
-      when: update_result.reboot_required == true
+      ansible.windows.win_reboot:
+      when: update_result.reboot_required == True
