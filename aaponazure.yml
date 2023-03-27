@@ -2,10 +2,11 @@
 - name: Ping websites
   hosts: all
   tasks:
+
     - name: ping google.com
-      ansible.builtin.ping:
+      ansible.windows.win_ping:
         data: "www.google.com"
 
     - name: ping redhat.com
-      ansible.builtin.ping:
+      ansible.windows.win_ping:
         data: "www.redhat.com"
