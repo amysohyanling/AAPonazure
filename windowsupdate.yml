@@ -1,0 +1,15 @@
+---
+- name: Retrieve windows updates
+  hosts: all
+  tasks:
+    - name: Install windows updates
+      ansible.windows.win_updates:
+        category_names:
+          - SecurityUpdates
+          - CriticalUpdates
+        reboot: yes
+      register: update_result
+
+    - name: Reboot the server if required
+      ansible.windows.reboot:
+      when: update_result.reboot_required == true
